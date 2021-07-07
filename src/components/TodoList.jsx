@@ -18,9 +18,10 @@ function TodoList() {
                 {todos.map((x, i) => {
 
                     return (
-                        <li key={i} onClick={handleClick}>
+                        <li key={i}>
                             {x.done ? "✓ " : "○ "}
                             {x.text}
+                            <button onClick={handleClick}>delete</button>
                         </li>
                     );
 
