@@ -1,31 +1,20 @@
 import './TodoList.css'
+import TodoListItem from './TodoListItem';
 
-function TodoList() {
+function TodoList(props) {
     console.log("TodoList function is running!");
-
-    const todos = [
-        { text: "Wash dishes", done: false },
-        { text: "Make a website", done: true },
-    ];
-
-    function handleClick() {
-        console.log("TodoList handleClick function is running!");
-    }
 
     return (
         <div className="todos">
             <ul>
-                {todos.map((x, i) => {
-
-                    return (
-                        <li key={i}>
-                            {x.done ? "✓ " : "○ "}
-                            {x.text}
-                            <button onClick={handleClick}>delete</button>
-                        </li>
-                    );
-
-                })}
+                {props.items.map((todo, i) =>
+                    <TodoListItem
+                        key={i}
+                        todo={todo}
+                        deleteTodo={props.deleteTodo}
+                        index={i}
+                    />
+                )}
             </ul>
         </div>
     );
