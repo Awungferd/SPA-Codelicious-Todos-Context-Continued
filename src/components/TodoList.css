@@ -16,3 +16,5 @@
 .todos li button:hover {
     background: pink;
 }
+
+.todos li.my-todo { background: lime; }

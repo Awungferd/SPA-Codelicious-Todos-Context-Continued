@@ -1,11 +1,16 @@
-export default function TodoListItem({ todo, deleteTodo, index }) {
+function TodoListItem({ user, todo, deleteTodo }) {
+    const mine = todo.user === user.id
     return(
-        <li>
+        <li className={mine ? "my-todo" : ""}>
             {todo.done ? "✓ " : "○ "}
             {todo.text}
-            <button onClick={() => deleteTodo(index)}>
-                delete
-            </button>
+            {mine && 
+                <button onClick={() => deleteTodo(todo)}>
+                    delete
+                </button>
+            }
         </li>
     );
 }
+
+export default TodoListItem;
