@@ -9,6 +9,7 @@ const defaultTodos = [
     { id: 59858, user: 2, text: "Make a website", done: true },
 ];
 
+// NOTE: TodoList doesn't even use "user", it just passes it
 function TodoList({ user }) {
     const [todos, setTodos] = useState(defaultTodos);
 
