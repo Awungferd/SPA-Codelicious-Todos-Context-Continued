@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import './Login.css';
+import { UserContext } from '../contexts/UserContext';
 
-function Login({ setUser }) {
-
+function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const { setUser } = useContext(UserContext);
 
     function doLogin(e) {
         e.preventDefault();
@@ -14,7 +16,7 @@ function Login({ setUser }) {
             return;
         }
 
-        setUser({ id: 1, email, name: "Joel Peltonen" });
+        setUser({ id: 1, email, name: "Joel Nenotlep", role: "admin" });
     }
 
     return (
