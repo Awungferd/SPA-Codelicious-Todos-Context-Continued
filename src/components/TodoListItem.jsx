@@ -10,7 +10,7 @@ function TodoListItem({ todo, deleteTodo }) {
         <li className={mine ? "my-todo" : ""}>
             {todo.done ? "✓ " : "○ "}
             {todo.text}
-            {mine && 
+            {mine &&
                 <button onClick={() => deleteTodo(todo)}>
                     delete
                 </button>
